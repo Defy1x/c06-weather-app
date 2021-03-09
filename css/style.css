@@ -1,0 +1,399 @@
+/* reset css*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+ol,ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+blockquote,q {
+  quotes: none;
+}
+blockquote:before,blockquote:after,q:before,q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  text-decoration: none;
+}
+.txt-rt {
+  text-align: right;
+}
+.txt-lt {
+  text-align: left;
+}
+.txt-center {
+  text-align: center;
+}
+.float-rt {
+  float: right;
+}
+.float-lt {
+  float: left;
+}
+.clear {
+  clear: both;
+}
+.pos-relative {
+  position: relative;
+}
+.pos-absolute {
+  position: absolute;
+}
+.vertical-base {
+  vertical-align: baseline;
+}
+.vertical-top {
+  vertical-align: top;
+}
+nav.vertical ul li {
+  display:block;
+}
+nav.horizontal ul li {
+  display: inline-block;
+}
+img {
+  max-width:100%;
+}
+/* end reset*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url(../img/default.jpg)repeat 0px 0px;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	-ms-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 2.4em;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.container {
+    padding: 1.3em 0 0;
+}
+
+
+.main {
+    width: 25%;
+    margin: 2em auto;
+    background: rgba(0, 0, 0, 0.45);
+    background-size: cover;
+    padding: 2em;
+    border-radius: 20px;
+}
+
+#date {
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.3em;
+}
+
+#day {
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.8em;
+}
+
+.form-container{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-bottom:1em;
+  width: 90%;
+  margin:0 auto;
+}
+
+#zip-code {
+color: #fff;
+font-size: 16px;
+background:rgba(0, 0, 0, .5);
+border: 1px rgba(0, 0, 0, 0.34);
+border-radius: 25px;
+padding: 0px 2em;
+margin: 0;
+width: 40%;
+height: 60px;
+line-height: 60px;
+vertical-align: middle;
+}
+
+#search-btn{
+	height:40px;
+	width:40px;
+	border:0;
+	cursor:pointer;
+	zoom:1;
+	filter:alpha(opacity=85);
+	opacity:0.85;
+	background:transparent url(../img/search-icon.png) center center no-repeat;
+  vertical-align: middle;
+  margin: 0;
+}
+
+#search-btn:hover{
+	filter:alpha(opacity=100);
+	opacity:1;
+}
+
+#weather-status{
+  text-transform: capitalize;
+  font-size: 1.8em;
+}
+
+.text-container {
+    text-align: center;
+}
+
+.min-max-container{
+  display: flex;
+  justify-content: center;
+}
+
+.text-container h3 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.text-container h5 {
+    font-size: 0.9em;
+    color: #ececec;
+    font-weight: 100;
+    margin-top: 0.5em;
+}
+
+.text-container h2 {
+    font-size: 7em;
+    font-weight: 600;
+    color: rgba(255, 215, 1, 0.80);
+}
+
+.text-container span {
+    font-weight: 200;
+    font-size: 0.6em;
+    vertical-align: text-top;
+}
+
+.text-container h4 {
+    font-size: 2.3em;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.text-container h6 {
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: .3em;
+}
+
+.weather-icon {
+    margin: .9em auto 0;
+}
+
+.status{
+    text-align: center;
+}
+
+.status h6 {
+    font-size: 0.9em;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* responsive-design */
+@media(max-width: 4000px){
+  h1 {
+      font-size: 2.8em;
+   }
+.main {
+    width: 27%;
+ }
+#search-form{
+  width: 50%;
+  text-align: center;
+ }
+}
+
+@media(max-width: 1280px){
+.main {
+    width: 31%;
+ }
+ #search-form{
+   width: 60%;
+   text-align: center;
+  }
+}
+
+@media(max-width: 1080px){
+.main {
+    width: 35%;
+ }
+ #search-form{
+   width: 60%;
+   text-align: center;
+  }
+}
+
+@media(max-width: 991px){
+  #search-form{
+    width: 70%;
+    text-align: center;
+   }
+.container {
+    padding: 2em 0 0;
+ }
+h1 {
+    font-size: 2.6em;
+ }
+.text-container h2 {
+    font-size: 7em;
+ }
+.main {
+    width: 40%;
+ }
+}
+
+@media(max-width: 768px){
+  #search-form{
+    width: 70%;
+    text-align: center;
+   }
+.weather-icon  {
+    margin: 1.3em auto 0;
+ }
+
+}
+@media(max-width: 667px){
+  #search-form{
+    width: 70%;
+    text-align: center;
+   }
+.main {
+    width: 50%;
+ }
+}
+
+@media(max-width: 600px){
+  #search-form{
+    width: 70%;
+    text-align: center;
+   }
+  h1 {
+      font-size: 2.4em;
+   }
+  .text-container h6 {
+      margin-top: 0.5em;
+   }
+  .container {
+      padding: 1.5em 0 0;
+ }
+}
+
+@media(max-width: 480px){
+  #search-form{
+    width: 70%;
+    text-align: left;
+    float:left;
+   }
+  h1 {
+      font-size: 2.4em;
+   }
+  .main {
+      width: 57%;
+   }
+  #day {
+      font-size: 1.2em;
+   }
+  .weather-icon {
+      width: 75%;
+ }
+}
+
+@media(max-width: 430px){
+  #search-form{
+    width: 80%;
+    text-align: left;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+   }
+.text-container h2 {
+    font-size: 6em;
+ }
+ #day {
+     font-size: 1.2em;
+  }
+.text-container h4 {
+    font-size: 1.8em;
+    letter-spacing: 1px;
+ }
+.sliding-icons {
+    width: 85%;
+ }
+.main {
+    padding: 1.5em;
+ }
+}
+
+@media(max-width: 384px){
+  #search-form{
+    width: 80%;
+    text-align: left;
+    float: left;
+   }
+  h1 {
+      font-size: 2.2em;
+  }
+  #day {
+      font-size: 1.2em;
+   }
+  .main{
+      width: 70%;
+ }
+}
+
+@media(max-width:320px){
+  #search-form{
+    width: 80%;
+    text-align: left;
+    float: left;
+   }
+  h1 {
+      font-size: 2.2em;
+   }
+   #day {
+       font-size: 1.2em;
+    }
+  .main {
+      width: 75%;
+      padding: 1em;
+   }
+  .text-container h2 {
+      font-size: 5em;
+   }
+  .text-container h4 {
+      font-size: 1.8em;
+   }
+  .text-container h6 {
+      letter-spacing: 0px;
+   }
+  .weather-icon {
+      width: 70%;
+ }
+}
