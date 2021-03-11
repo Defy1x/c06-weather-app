@@ -1,0 +1,86 @@
+body{
+  color: white;
+}
+
+.container {
+  /* background: url(../img/atlanta.jpg)repeat 0px 0px;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; */
+  background-image: linear-gradient(180deg,rgba(40,47,182,1), rgba(27,91,193,1));
+  padding: 30px;
+}
+
+header{
+  display:flex;
+}
+
+.title{
+  width: 70%;
+}
+
+
+h1{
+  font-size: 32px;
+}
+
+.form-container{
+}
+
+.today-container{
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, .2);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+.status-container-left{
+  /* display:flex;
+  flex-direction: row; */
+}
+#location{
+  /* display:flex;
+  flex-direction: column; */
+  margin-right: 5px;
+}
+
+#city{
+  font-size: 30px;
+  margin: 10px;
+}
+.fa-lg{
+  height: 50px;
+}
+
+section{
+  margin-bottom: 20px;
+}
+#zip-code {
+color: #fff;
+font-size: 16px;
+background:rgba(0, 0, 0, .5);
+border: 1px rgba(0, 0, 0, 0.34);
+border-radius: 25px;
+padding: 0px 2em;
+margin: 0;
+height: 40px;
+line-height: 60px;
+vertical-align: middle;
+}
+
+#search-btn{
+	height:40px;
+	width:40px;
+	border:0;
+	cursor:pointer;
+	filter:alpha(opacity=85);
+	opacity:0.85;
+	background:transparent url(../img/search-icon.png) center center no-repeat;
+  vertical-align: middle;
+  margin: 0;
+}

@@ -1,3 +1,4 @@
+console.log("skycons loaded");
 (function(global) {
   "use strict";
 
