@@ -60,7 +60,8 @@ h1{
 section{
   margin-bottom: 20px;
 }
-#zip-code {
+
+#city-name {
 color: #fff;
 font-size: 16px;
 background:rgba(0, 0, 0, .5);
