@@ -69,6 +69,8 @@ async function search(city) {
       console.log(currentTemp)
 
       $('#today-temp').html(`${currentTemp}°F`)
+      $('#today-humidity').text(`Humidity: ${weatherData.main.humidity}%`)
+      $('#today-windspeed').text(`Windspeed: ${weatherData.wind.speed}`)
   }
 
 // pull in today's date

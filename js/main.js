@@ -91,8 +91,6 @@ $(document).ready(function() {
     })
   }
 
-
-
   // async function begins
   async function search(zip) {
 
