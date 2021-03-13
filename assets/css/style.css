@@ -334,10 +334,6 @@ vertical-align: middle;
   .title{
     width: 100%;
   }
-  #forecast-container{
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
   #forecast-title{
     font-size: 20px;
   }
@@ -348,8 +344,23 @@ vertical-align: middle;
     text-align: left;
     padding-left: 0px;
   }
+  .future-date{
+    font-size: 10px;
+  }
+
+  .future-temp{
+    font-size: 10px;
+  }
+
+  .future-status{
+      font-size: 10px;
+  }
+
+  .future-humidity{
+      font-size: 10px;
+  }
   section{
-    width: 15%;
+    width: 17%;
     margin-left: 7px;
     padding: 10px;
   }
