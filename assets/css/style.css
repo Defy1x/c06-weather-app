@@ -229,6 +229,7 @@ vertical-align: middle;
     width: 500px;
   }
   .status-container-right{
+    padding-top: 10px;
     flex-direction: column;
     text-align: right;
     padding-top: 0px;
@@ -241,14 +242,16 @@ vertical-align: middle;
   }
   #today-windspeed{
     padding-bottom: 0px;
+    text-align: center;
   }
 
   #today-humidity{
     padding-bottom: 0px;
+    text-align: center;
   }
 
   #today-uv{
-    padding-left: 0px;
+    text-align: center;
   }
 }
 
@@ -267,11 +270,14 @@ vertical-align: middle;
   }
   .status-container-right{
     display: block;
-    flex-direction: row;
     text-align: left;
+    padding-left: 0px;
+    padding-top: 10px;
   }
   .status-container-left{
-    /* display:block; */
+    text-align: center;
+    display: block;
+    margin-top: 0px;
   }
   #forecast-container{
     flex-wrap: wrap;
@@ -309,16 +315,18 @@ vertical-align: middle;
       font-size: 11px;
       padding-bottom: 7px;
   }
+  #city{
+    font-size: 30px;
+  }
+  #today-temp{
+    font-size: 70px;
+    padding-bottom: 10px;
+  }
 }
 
 @media (max-width: 600px) {
   header{
     padding-left: 10%;
-  }
-  .status-container-right{
-    display: block;
-    flex-direction: row;
-    text-align: left;
   }
   .title{
     width: 100%;
