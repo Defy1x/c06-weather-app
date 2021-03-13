@@ -217,7 +217,7 @@ vertical-align: middle;
   }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 991px) {
   .title{
     width: 70%;
     padding-left: 10px;
