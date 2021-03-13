@@ -28,17 +28,16 @@ h2{
 ul{
   padding-top: 5px;
   margin-top:2px;
-  width: 70%;
+  width: 60%;
   padding-inline-start: 0px;
 }
 li{
   text-align: left;
-  border-radius: 15px;
-  padding: 15px;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 30px;
   background: rgba(0, 0, 0, .5);
   margin-bottom: 3px;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 #forecast-container{
