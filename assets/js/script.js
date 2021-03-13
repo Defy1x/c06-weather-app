@@ -5,6 +5,17 @@ $(document).ready(function() {
   for(i = list.length; i--; )
   icons.set(list[i], list[i]);
   icons.play();
+  hideAll();
+  $( function() {
+  $( "#accordion" ).accordion();
+} );
+
+function hideAll(){
+  $('.location').hide();
+  $('.today-container').hide();
+  $('#forecast-container').hide();
+  $('#forecast-title').hide();
+}
 
 $('#search-form').submit(function(e){
     e.preventDefault()
@@ -53,7 +64,7 @@ async function search(city) {
   }
 
   function displayResults(weatherData) {
-
+      showItems();
       $('#city').text(`${weatherData.name},${weatherData.sys.country}`)
       let status = `${weatherData.weather[0].description}`
       $('#today-status').text(status)
@@ -70,8 +81,15 @@ async function search(city) {
 
       $('#today-temp').html(`${currentTemp}°F`)
       $('#today-humidity').text(`Humidity: ${weatherData.main.humidity}%`)
-      $('#today-windspeed').text(`Windspeed: ${weatherData.wind.speed}`)
+      $('#today-windspeed').text(`Windspeed: ${weatherData.wind.speed}mph`)
   }
+
+function showItems(){
+  $('.location').show();
+  $('.today-container').show();
+  $('#forecast-container').show();
+  $('#forecast-title').show();
+}
 
 // pull in today's date
   function getDate(){
