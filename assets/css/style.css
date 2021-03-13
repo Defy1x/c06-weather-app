@@ -217,7 +217,7 @@ vertical-align: middle;
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 993px) {
   .title{
     width: 70%;
     padding-left: 10px;
@@ -226,7 +226,7 @@ vertical-align: middle;
     font-size: 26px;
   }
   .form-container{
-    width: 350px;
+    width: 400px;
   }
   .status-container-right{
     padding-top: 10px;
@@ -267,6 +267,9 @@ vertical-align: middle;
   }
   #current-date{
     margin-left: 0px;
+  }
+  .form-container{
+    width: 350px;
   }
   .status-container-right{
     display: block;
@@ -347,7 +350,7 @@ vertical-align: middle;
   }
   section{
     width: 15%;
-    margin-left: 5px;
+    margin-left: 7px;
     padding: 10px;
   }
 }
