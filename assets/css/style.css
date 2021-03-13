@@ -329,7 +329,7 @@ vertical-align: middle;
 
 @media (max-width: 600px) {
   header{
-    padding-left: 10%;
+    padding-left: 0;
   }
   .title{
     width: 100%;
