@@ -6,7 +6,6 @@ body{
    /* background: url(../img/atlanta.jpg)repeat 0px 0px; */
   background-attachment: fixed;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
   -o-background-size: cover;
   -ms-background-size: cover;
   background-size: cover;
@@ -26,6 +25,21 @@ h2{
   font-size: 32px;
   margin-left: 20px;
 }
+ul{
+  padding-top: 5px;
+  margin-top:2px;
+  width: 70%;
+  padding-inline-start: 0px;
+}
+li{
+  text-align: left;
+  border-radius: 15px;
+  padding: 15px;
+  background: rgba(0, 0, 0, .5);
+  margin-bottom: 3px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
 #forecast-container{
   display:flex;
@@ -34,7 +48,7 @@ h2{
 section{
   margin-bottom: 20px;
   margin-left: 20px;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, .5);
   border-radius: 15px;
   padding: 20px;
   width: 25%;
@@ -59,7 +73,7 @@ section{
 .today-container{
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, .5);
   border-radius: 15px;
   padding: 30px;
   margin-left: 20px;
@@ -151,7 +165,6 @@ vertical-align: middle;
 	width:40px;
 	border:0;
 	cursor:pointer;
-	filter:alpha(opacity=85);
 	opacity:0.85;
 	background:transparent url(../img/search-icon.png) center center no-repeat;
   vertical-align: middle;
@@ -267,7 +280,6 @@ vertical-align: middle;
     width: 350px;
   }
   header{
-    font-size: 26px;
     flex-direction: column;
     justify-content: center;
     padding-left: 20%;

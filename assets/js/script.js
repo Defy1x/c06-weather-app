@@ -6,9 +6,7 @@ $(document).ready(function() {
   icons.set(list[i], list[i]);
   icons.play();
   hideAll();
-  $( function() {
-  $( "#accordion" ).accordion();
-} );
+  getLocalStorage();
 
 function hideAll(){
   $('.location').hide();
@@ -53,7 +51,7 @@ $('#search-btn').click((event) =>{
 async function search(city) {
 
   try {
-
+//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
     const url = 'https://api.openweathermap.org/data/2.5/weather'
     const apiKey = '4159a716c99e2d3e9c669ff6a22c35db'
 
@@ -67,7 +65,6 @@ async function search(city) {
       displayResults(response.data)
 
     } catch (error) {
-      console.log(error)
       alert('Please enter a valid city')
     }
   }
@@ -75,10 +72,12 @@ async function search(city) {
   function displayResults(weatherData) {
       showItems();
       hideIcons();
+      getDate();
+      addToLocalStorage();
+
       $('#city').text(`${weatherData.name},${weatherData.sys.country}`)
       let status = `${weatherData.weather[0].description}`
       $('#today-status').text(status)
-      getDate()
 
       function convertToF(kelvin) {
       let celcius = kelvin - 273
@@ -87,7 +86,6 @@ async function search(city) {
       }
 
       const currentTemp = convertToF(weatherData.main.temp)
-      console.log(currentTemp)
 
       $('#today-temp').html(`${currentTemp}°F`)
       $('#today-humidity').text(`Humidity: ${weatherData.main.humidity}%`)
@@ -243,7 +241,6 @@ async function search(city) {
 
     //DEFAULT JUST IN CASE IF I MISSED A VALUE
       default:
-        console.log("no image")
         // end switch statement
         }
   }
@@ -253,7 +250,7 @@ function showItems(){
   $('.today-container').show();
   $('#forecast-container').show();
   $('#forecast-title').show();
-}
+};
 
 function hideIcons(){
   $('#clear-day').hide()
@@ -264,10 +261,18 @@ function hideIcons(){
   $('#snow').hide()
   $('#wind').hide()
   $('#fog').hide()
-}
+};
 
 // pull in today's date
-  function getDate(){
-    var todayDate = moment().format("dddd, MMMM Do");
-    $("#current-date").text(todayDate);
-  }
+function getDate(){
+  var todayDate = moment().format("dddd, MMMM Do");
+  $("#current-date").text(todayDate);
+};
+
+function getLocalStorage(){
+  console.log("get local storage")
+}
+
+function addToLocalStorage(){
+  console.log("add to local storage")
+}
