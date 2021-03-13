@@ -256,9 +256,6 @@ vertical-align: middle;
 }
 
 @media (max-width: 768px) {
-  h1{
-    text-align: center;
-  }
   .title{
     width: 100%;
   }
@@ -373,6 +370,6 @@ vertical-align: middle;
       font-size: 10px;
   }
   #city-name{
-    width: 50%;
+    width: 60%;
   }
 }
