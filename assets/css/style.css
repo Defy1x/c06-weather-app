@@ -34,7 +34,7 @@ h2{
 section{
   margin-bottom: 20px;
   margin-left: 20px;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .4);
   border-radius: 15px;
   padding: 20px;
   width: 25%;
@@ -59,7 +59,7 @@ section{
 .today-container{
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .4);
   border-radius: 15px;
   padding: 30px;
   margin-left: 20px;

@@ -15,6 +15,14 @@ function hideAll(){
   $('.today-container').hide();
   $('#forecast-container').hide();
   $('#forecast-title').hide();
+  $('#clear-day').hide()
+  $('#partly-cloudy-day').hide()
+  $('#cloudy').hide()
+  $('#rain').hide()
+  $('#sleet').hide()
+  $('#snow').hide()
+  $('#wind').hide()
+  $('#fog').hide()
 }
 
 $('#search-form').submit(function(e){
@@ -31,6 +39,7 @@ $('#search-btn').click((event) =>{
   if (!city){
   return;
   }
+
 
 // parameter for call
   search(city)
@@ -65,6 +74,7 @@ async function search(city) {
 
   function displayResults(weatherData) {
       showItems();
+      hideIcons();
       $('#city').text(`${weatherData.name},${weatherData.sys.country}`)
       let status = `${weatherData.weather[0].description}`
       $('#today-status').text(status)
@@ -82,6 +92,160 @@ async function search(city) {
       $('#today-temp').html(`${currentTemp}°F`)
       $('#today-humidity').text(`Humidity: ${weatherData.main.humidity}%`)
       $('#today-windspeed').text(`Windspeed: ${weatherData.wind.speed}mph`)
+
+      //CLEAR SKIES BEGINS
+      switch (status) {
+      case ('clear sky'):
+        $('#clear-day').show()
+        break;
+    // Clear skies ends fuck noooooo :(
+
+    //PARTLY CLOUDY BEGINS
+      case ('scattered clouds'):
+      case ('broken clouds'):
+      case ('few clouds'):
+        $('#partly-cloudy-day').show()
+        break;
+    // PARTLY CLOUDY ENDS
+
+    // CLOUDY BEGINS
+      case ('cloudy'):
+      case ('overcast clouds'):
+        $('#cloudy').show()
+        break;
+    // CLOUDY ENDS
+
+    // RAIN BEGINS
+      case ('drizzle'):
+      case ('light intensity drizzle'):
+      case ('heavy intensity drizzle'):
+      case ('light intensity drizzle rain'):
+      case ('drizzle rain'):
+      case ('heavy intensity drizzle rain'):
+      case ('shower rain and drizzle'):
+      case ('light intensity shower rain'):
+      case ('heavy shower rain and drizzle'):
+      case ('shower drizzle'):
+        $('#rain').show()
+        break;
+    // RAIN ENDS
+
+    // RAIN BEGINS
+      case ('light rain'):
+      case ('light intensity rain'):
+      case ('ragged shower rain'):
+        $('#rain').show()
+        break;
+    // RAIN ENDS
+
+    // HEAVY RAIN BEGINS
+      case ('shower rain'):
+      case ('heavy intensity rain'):
+      case ('moderate rain'):
+      case ('very heavy rain'):
+      case ('extreme rain'):
+        $('#rain').show()
+        break;
+    // HEAVY RAIN ENDS
+
+    //FOG BEGINS
+      case ('fog'):
+        $('#fog').show()
+        break;
+    // FOG ENDS
+
+    //MIST BEGINS
+      case ('mist'):
+        $('#fog').show()
+        break;
+    // MIST ENDS
+
+    //SAND BEGINS
+      case ('sand'):
+      case ('sand/ dust whirls'):
+        $('#fog').show()
+        break;
+    // SAND ENDS
+
+    // TORNADO BEGINS
+      case ('tornado'):
+        $('#wind').show()
+        break;
+    // TORNADO ENDS
+
+    // SQUALLS BEGINS
+      case ('squalls'):
+        $('#wind').show()
+        break;
+    // SQUALLS ENDS
+
+    // DUST BEGINS
+      case ('dust'):
+        $('#fog').show()
+        break;
+    // DUST ENDS
+
+    // ASH BEGINS
+      case ('volcanic ash'):
+        $('#fog').show()
+        break;
+    // ASH ENDS
+
+    // HAZE BEGINS
+      case ('haze'):
+        $('#fog').show()
+        break;
+    // HAZE ENDS
+
+    // SMOKE BEGINS
+      case ('smoke'):
+        $('#fog').show()
+        break;
+    // SMOKE ENDS
+
+    //THUNDERSTORM BEGINS
+      case ('thunderstorm'):
+      case ('thunderstorm with rain'):
+      case ('thunderstorm with light rain'):
+      case ('thunderstorm with heavy rain'):
+      case ('light thunderstorm'):
+      case ('heavy thunderstorm'):
+      case ('ragged thunderstorm'):
+      case ('thunderstorm with light drizzle'):
+      case ('thunderstorm with drizzle'):
+      case ('thunderstorm with heavy drizzle'):
+        $('#rain').show()
+        break;
+    // THUNDERSTORM ENDS
+
+    //SNOW BEGINS
+      case ('sleet'):
+      case ('light shower sleet'):
+      case ('shower sleet'):
+      case ('freezing rain'):
+      case ('rain and snow'):
+        $('#sleet').show()
+        break;
+    // SNOW ENDS
+
+    //SNOW BEGINS
+      case ('snow'):
+      case ('light snow'):
+      case ('heavy snow'):
+      case ('light rain and snow'):
+      case ('rain and snow'):
+      case ('light shower snow'):
+      case ('shower snow'):
+      case ('heavy shower snow'):
+        $('#snow').show()
+        break;
+    // SNOW ENDS
+
+    //DEFAULT JUST IN CASE IF I MISSED A VALUE
+      default:
+        console.log("no image")
+        // end switch statement
+        }
   }
 
 function showItems(){
@@ -89,6 +253,17 @@ function showItems(){
   $('.today-container').show();
   $('#forecast-container').show();
   $('#forecast-title').show();
+}
+
+function hideIcons(){
+  $('#clear-day').hide()
+  $('#partly-cloudy-day').hide()
+  $('#cloudy').hide()
+  $('#rain').hide()
+  $('#sleet').hide()
+  $('#snow').hide()
+  $('#wind').hide()
+  $('#fog').hide()
 }
 
 // pull in today's date
