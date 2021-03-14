@@ -85,7 +85,7 @@ async function search(city) {
       return Math.floor(farenheit)
       }
 
-      let uvIndex = 3;
+      let uvIndex = 10;
 
       console.log (uvIndex)
 
@@ -95,8 +95,8 @@ async function search(city) {
       else if (uvIndex > 3 && uvIndex <= 6){
         $('#uv-condition').text("Moderate").addClass("moderate");
       }
-      else if(uvIndex > 6 && uvIndex <= 8 ){
-        $('#uv-condition').text("Danger!").addClass("danger");
+      else if(uvIndex <= 7 || uvIndex > 7 ){
+        $('#uv-condition').text("Danger").addClass("danger");
       }
 
       const currentTemp = convertToF(weatherData.main.temp)
