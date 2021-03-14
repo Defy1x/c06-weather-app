@@ -85,6 +85,20 @@ async function search(city) {
       return Math.floor(farenheit)
       }
 
+      let uvIndex = 3;
+
+      console.log (uvIndex)
+
+      if (uvIndex <= 3 ){
+        $('#uv-condition').text("Favorable").addClass("favorable");
+      }
+      else if (uvIndex > 3 && uvIndex <= 6){
+        $('#uv-condition').text("Moderate").addClass("moderate");
+      }
+      else if(uvIndex > 6 && uvIndex <= 8 ){
+        $('#uv-condition').text("Danger!").addClass("danger");
+      }
+
       const currentTemp = convertToF(weatherData.main.temp)
 
       $('#today-temp').html(`${currentTemp}°F`)

@@ -170,6 +170,24 @@ vertical-align: middle;
   margin: 0;
 }
 
+.favorable{
+  background-color: green;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.moderate{
+  background-color: orange;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.danger{
+  background-color: red;
+  border-radius: 15px;
+  padding: 5px;
+}
+
 .future-date{
   font-size: 26px;
   padding-bottom: 15px;
