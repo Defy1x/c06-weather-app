@@ -8,6 +8,7 @@ $(document).ready(function() {
   hideAll();
   getLocalStorage();
 
+//hide call icons
 function hideAll(){
   $('.location').hide();
   $('.today-container').hide();
@@ -23,6 +24,7 @@ function hideAll(){
   $('#fog').hide()
 }
 
+//prevent form from reloading the screen
   $('#search-form').submit(function(e){
       e.preventDefault()
   })
@@ -33,15 +35,15 @@ $('#search-btn').click((event) =>{
   city = $('#city-name').val().toLowerCase()
   console.log(city)
 
-// if no value, exit
+// if no value entered for city, then exit
   if (!city){
   return;
   }
 
-// parameter for call
+// run search city (1st api)
 search(city);
 
-//clear form
+//clear city form value
   $('#city-name').val('')
   })
 });
@@ -314,8 +316,6 @@ async function getForecast(lat, lon) {
 
 function displayForecast(forecastData){
 
-  console.log("forecast data running!");
-
   //display UV Index
   let uvIndex = (`${forecastData.current.uvi}`);
 
@@ -327,8 +327,35 @@ function displayForecast(forecastData){
     $('#uv-condition').text("Moderate").addClass("moderate");
   }
   else if(uvIndex <= 7 || uvIndex > 7 ){
-    $('#uv-condition').text("Danger").addClass("danger");
+    $('#uv-condition').text("High").addClass("high");
   }
+
+  //display results in 5 containers
+  for (var i = 1; i < 6; i++) {
+              //display future date
+               var futureDate = moment.unix(`${forecastData.daily[i].dt}`).format("dddd");
+               $('.future-date').text(futureDate);
+               console.log(futureDate)
+
+               //display future temp and round degrees down
+               var futureTemp = (`${forecastData.daily[i].temp.day}`)
+               var futureTempRound = Math.floor(futureTemp)+"°F";
+               $('.future-temp').text(futureTempRound);
+               console.log(futureTempRound)
+
+               //display future status
+               var futureStatus = (`${forecastData.daily[i].weather[0].description}`)
+               $('.future-status').text(futureStatus);
+               console.log(futureStatus);
+
+              //display future Humidity
+               var futureHumidity = (`Humidity: ${forecastData.daily[i].humidity}%`)
+               $('.future-humidity').text(futureHumidity);
+               console.log(futureHumidity);
+
+              //display future icons
+              
+           }
 
 }
 
