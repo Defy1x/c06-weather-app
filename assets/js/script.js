@@ -85,7 +85,7 @@ async function search(city) {
       return Math.floor(farenheit)
       }
 
-      let uvIndex = 10;
+      let uvIndex = 3;
 
       console.log (uvIndex)
 
