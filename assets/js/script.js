@@ -8,6 +8,8 @@ $(document).ready(function() {
   hideAll();
   getLocalStorage();
 
+  // $('.future-weather-icon').remove('');
+
 //hide call icons
 function hideAll(){
   $('.location').hide();
@@ -332,31 +334,120 @@ function displayForecast(forecastData){
 
   //display results in 5 containers
   for (var i = 1; i < 6; i++) {
-              //display future date
-               var futureDate = moment.unix(`${forecastData.daily[i].dt}`).format("dddd");
-               $('.future-date').text(futureDate);
-               console.log(futureDate)
+      // display future date
+      var futureDate = moment.unix(`${forecastData.daily[i].dt}`).format("dddd");
+      $('.future-date').text(futureDate);
+      console.log(futureDate)
 
-               //display future temp and round degrees down
-               var futureTemp = (`${forecastData.daily[i].temp.day}`)
-               var futureTempRound = Math.floor(futureTemp)+"°F";
-               $('.future-temp').text(futureTempRound);
-               console.log(futureTempRound)
+      //display future temp and round degrees down
+      var futureTemp = (`${forecastData.daily[i].temp.day}`)
+      var futureTempRound = Math.floor(futureTemp)+"°F";
+      $('.future-temp').text(futureTempRound);
+      console.log(futureTempRound)
 
                //display future status
-               var futureStatus = (`${forecastData.daily[i].weather[0].description}`)
-               $('.future-status').text(futureStatus);
-               console.log(futureStatus);
+      var futureStatus = (`${forecastData.daily[i].weather[0].description}`)
+      $('.future-status').text(futureStatus);
+      console.log(futureStatus);
 
-              //display future Humidity
-               var futureHumidity = (`Humidity: ${forecastData.daily[i].humidity}%`)
-               $('.future-humidity').text(futureHumidity);
-               console.log(futureHumidity);
+      //display future Humidity
+      var futureHumidity = (`Humidity: ${forecastData.daily[i].humidity}%`)
+      $('.future-humidity').text(futureHumidity);
+      console.log(futureHumidity);
 
-              //display future icons
-              
-           }
+      //display future icons
+      switch (futureStatus) {
+      case ('clear sky'):
+        $('.future-weather-icon').append('<i class="fas fa-sun fa-2x"></i>');
+        break;
+    // Clear skies ends fuck noooooo :(
 
+    //PARTLY CLOUDY BEGINS
+      case ('scattered clouds'):
+      case ('broken clouds'):
+      case ('few clouds'):
+          $('.future-weather-icon').append('<i class="fas fa-cloud-sun fa-2x">');
+        break;
+    // PARTLY CLOUDY ENDS
+
+    // CLOUDY BEGINS
+      case ('cloudy'):
+      case ('overcast clouds'):
+      case ('volcanic ash'):
+      case ('smoke'):
+          $('.future-weather-icon').append('<i class="fas fa-cloud fa-2x">');
+        break;
+    // CLOUDY ENDS
+
+    // RAIN BEGINS
+      case ('drizzle'):
+      case ('light intensity drizzle'):
+      case ('heavy intensity drizzle'):
+      case ('light intensity drizzle rain'):
+      case ('drizzle rain'):
+      case ('heavy intensity drizzle rain'):
+      case ('shower rain and drizzle'):
+      case ('light intensity shower rain'):
+      case ('heavy shower rain and drizzle'):
+      case ('shower drizzle'):
+      case ('light rain'):
+      case ('light intensity rain'):
+      case ('ragged shower rain'):
+      case ('shower rain'):
+      case ('heavy intensity rain'):
+      case ('moderate rain'):
+      case ('very heavy rain'):
+      case ('extreme rain'):
+      case ('thunderstorm'):
+      case ('thunderstorm with rain'):
+      case ('thunderstorm with light rain'):
+      case ('thunderstorm with heavy rain'):
+      case ('light thunderstorm'):
+      case ('heavy thunderstorm'):
+      case ('ragged thunderstorm'):
+      case ('thunderstorm with light drizzle'):
+      case ('thunderstorm with drizzle'):
+      case ('thunderstorm with heavy drizzle'):
+          $('.future-weather-icon').append('<i class="fas fa-cloud-showers-heavy fa-2x">');
+        break;
+    // RAIN ENDS
+
+    //FOG BEGINS
+      case ('fog'):
+      case ('mist'):
+      case ('sand'):
+      case ('sand/ dust whirls'):
+      case ('tornado'):
+      case ('squalls'):
+      case ('dust'):
+      case ('haze'):
+          $('.future-weather-icon').append('<i class="fas fa-wind"></i>');
+        break;
+    // FOG ENDS
+
+    //SNOW BEGINS
+      case ('sleet'):
+      case ('light shower sleet'):
+      case ('shower sleet'):
+      case ('freezing rain'):
+      case ('rain and snow'):
+      case ('snow'):
+      case ('light snow'):
+      case ('heavy snow'):
+      case ('light rain and snow'):
+      case ('rain and snow'):
+      case ('light shower snow'):
+      case ('shower snow'):
+      case ('heavy shower snow'):
+        $('.future-weather-icon').append('<i class="far fa-snowflake fa-2x">');
+        break;
+    // SNOW ENDS
+
+    //DEFAULT JUST IN CASE IF I MISSED A VALUE
+      default:
+        // end switch statement
+      }
+    }
 }
 
 // pull in today's date
