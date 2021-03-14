@@ -23,9 +23,9 @@ function hideAll(){
   $('#fog').hide()
 }
 
-$('#search-form').submit(function(e){
-    e.preventDefault()
-})
+  $('#search-form').submit(function(e){
+      e.preventDefault()
+  })
 
   // grab value from form
 $('#search-btn').click((event) =>{
@@ -38,27 +38,27 @@ $('#search-btn').click((event) =>{
   return;
   }
 
-
 // parameter for call
-  search(city)
+search(city);
 
 //clear form
   $('#city-name').val('')
   })
 });
 
+
 // async function begins
 async function search(city) {
 
   try {
-//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+
     const url = 'https://api.openweathermap.org/data/2.5/weather'
     const apiKey = '4159a716c99e2d3e9c669ff6a22c35db'
 
     let response = await axios.get(url, {
         params: {
         q: city,
-        appid: apiKey
+        appid: apiKey,
         }
       })
       console.log(response.data)
@@ -69,42 +69,52 @@ async function search(city) {
     }
   }
 
+
   function displayResults(weatherData) {
+    //show containers
       showItems();
+
+    //hide icons if function is run again
       hideIcons();
+    //get current date
       getDate();
+
+    //add city to local storage
       addToLocalStorage();
 
+    //display city
       $('#city').text(`${weatherData.name},${weatherData.sys.country}`)
+
+    //display status
       let status = `${weatherData.weather[0].description}`
       $('#today-status').text(status)
 
+
+
+
+      // convert temperature from kelvin to farenheit
       function convertToF(kelvin) {
       let celcius = kelvin - 273
       let farenheit = celcius * (9/5) + 32
       return Math.floor(farenheit)
       }
 
-      let uvIndex = 3;
-
-      console.log (uvIndex)
-
-      if (uvIndex <= 3 ){
-        $('#uv-condition').text("Favorable").addClass("favorable");
-      }
-      else if (uvIndex > 3 && uvIndex <= 6){
-        $('#uv-condition').text("Moderate").addClass("moderate");
-      }
-      else if(uvIndex <= 7 || uvIndex > 7 ){
-        $('#uv-condition').text("Danger").addClass("danger");
-      }
-
+      //display current temperature
       const currentTemp = convertToF(weatherData.main.temp)
-
       $('#today-temp').html(`${currentTemp}°F`)
+
+      //display current Humidity
       $('#today-humidity').text(`Humidity: ${weatherData.main.humidity}%`)
+      //display current windspeed
       $('#today-windspeed').text(`Windspeed: ${weatherData.wind.speed}mph`)
 
+      let lat = `${weatherData.coord.lat}`;
+      let lon = `${weatherData.coord.lon}`;
+
+      getForecast(lat,lon)
+
+
+  //Run switch statement to display animated icons based on the status
       //CLEAR SKIES BEGINS
       switch (status) {
       case ('clear sky'):
@@ -259,6 +269,7 @@ async function search(city) {
         }
   }
 
+// show containers for everything
 function showItems(){
   $('.location').show();
   $('.today-container').show();
@@ -266,6 +277,7 @@ function showItems(){
   $('#forecast-title').show();
 };
 
+//hide icons if they are already displaying
 function hideIcons(){
   $('#clear-day').hide()
   $('#partly-cloudy-day').hide()
@@ -277,9 +289,52 @@ function hideIcons(){
   $('#fog').hide()
 };
 
+//get 5 day forecast
+async function getForecast(lat, lon) {
+
+  try {
+
+    const url = 'https://api.openweathermap.org/data/2.5/onecall?&exclude=hourly,minutely&units=imperial'
+    const apiKey = '4159a716c99e2d3e9c669ff6a22c35db'
+
+    let forecast = await axios.get(url, {
+        params: {
+        lat: lat,
+        lon: lon,
+        appid: apiKey,
+        }
+      })
+      console.log(forecast.data)
+      displayForecast(forecast.data)
+
+    } catch (error) {
+      alert('Not a valid lat/long')
+    }
+  }
+
+function displayForecast(forecastData){
+
+  console.log("forecast data running!");
+
+  //display UV Index
+  let uvIndex = (`${forecastData.current.uvi}`);
+
+  //set UV index statements
+  if (uvIndex <= 3 ){
+    $('#uv-condition').text("Favorable").addClass("favorable");
+  }
+  else if (uvIndex > 3 && uvIndex <= 6){
+    $('#uv-condition').text("Moderate").addClass("moderate");
+  }
+  else if(uvIndex <= 7 || uvIndex > 7 ){
+    $('#uv-condition').text("Danger").addClass("danger");
+  }
+
+}
+
 // pull in today's date
 function getDate(){
-  var todayDate = moment().format("dddd, MMMM Do");
+  var todayDate = moment().format("dddd, MMMM Do YYYY");
   $("#current-date").text(todayDate);
 };
 
