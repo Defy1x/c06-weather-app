@@ -188,23 +188,87 @@ vertical-align: middle;
   padding: 5px;
 }
 
-.future-date{
+#future-date1{
   font-size: 26px;
   padding-bottom: 15px;
 }
 
-.future-temp{
+#future-date2{
+  font-size: 26px;
+  padding-bottom: 15px;
+}
+
+#future-date3{
+  font-size: 26px;
+  padding-bottom: 15px;
+}
+
+#future-date4{
+  font-size: 26px;
+  padding-bottom: 15px;
+}
+
+#future-date5{
+  font-size: 26px;
+  padding-bottom: 15px;
+}
+
+#future-temp1{
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 7px;
 }
 
-.future-status{
+#future-temp2{
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+}
+
+#future-temp3{
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+}
+
+#future-temp4{
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+}
+
+#future-temp5{
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+}
+
+#future-status1{
     font-size: 20px;
     padding-bottom: 7px;
 }
 
-.future-humidity{
+#future-status2{
+    font-size: 20px;
+    padding-bottom: 7px;
+}
+
+#future-status3{
+    font-size: 20px;
+    padding-bottom: 7px;
+}
+
+#future-status4{
+    font-size: 20px;
+    padding-bottom: 7px;
+}
+
+#future-status5{
+    font-size: 20px;
+    padding-bottom: 7px;
+}
+
+#future-humidity{
     font-size: 20px;
     padding-bottom: 7px;
 }
@@ -226,23 +290,107 @@ vertical-align: middle;
     font-size: 20px;
     padding-left: 20px;
   }
-  .future-date{
+  #future-date1{
     font-size: 16px;
     padding-bottom: 15px;
   }
 
-  .future-temp{
+  #future-date2{
+    font-size: 16px;
+    padding-bottom: 15px;
+  }
+
+  #future-date3{
+    font-size: 16px;
+    padding-bottom: 15px;
+  }
+
+  #future-date4{
+    font-size: 16px;
+    padding-bottom: 15px;
+  }
+
+  #future-date5{
+    font-size: 16px;
+    padding-bottom: 15px;
+  }
+
+  #future-temp1{
     font-size: 16px;
     padding-top: 10px;
     padding-bottom: 7px;
   }
 
-  .future-status{
+  #future-temp2{
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+
+  #future-temp3{
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+
+  #future-temp4{
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+
+  #future-temp5{
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+
+  #future-status1{
+    font-size: 16px;
+    padding-bottom: 7px;
+  }
+
+  #future-status2{
+    font-size: 16px;
+    padding-bottom: 7px;
+  }
+
+  #future-status3{
+    font-size: 16px;
+    padding-bottom: 7px;
+  }
+
+  #future-status4{
+    font-size: 16px;
+    padding-bottom: 7px;
+  }
+
+  #future-status5{
+    font-size: 16px;
+    padding-bottom: 7px;
+  }
+
+  #future-humidity1{
       font-size: 16px;
       padding-bottom: 7px;
   }
 
-  .future-humidity{
+  #future-humidity2{
+      font-size: 16px;
+      padding-bottom: 7px;
+  }
+
+  #future-humidity3{
+      font-size: 16px;
+      padding-bottom: 7px;
+  }
+
+  #future-humidity4{
+      font-size: 16px;
+      padding-bottom: 7px;
+  }
+
+  #future-humidity5{
       font-size: 16px;
       padding-bottom: 7px;
   }
@@ -265,7 +413,19 @@ vertical-align: middle;
     text-align: right;
     padding-top: 0px;
   }
-  .future-humidity{
+  #future-humidity1{
+    line-height: 20px;
+  }
+  #future-humidity2{
+    line-height: 20px;
+  }
+  #future-humidity3{
+    line-height: 20px;
+  }
+  #future-humidity4{
+    line-height: 20px;
+  }
+  #future-humidity5{
     line-height: 20px;
   }
   #today-temp{
@@ -334,27 +494,117 @@ vertical-align: middle;
     margin-left: 6px;
     padding: 5px;
   }
-  .future-date{
+
+  #future-date1{
     font-size: 11px;
     padding-top: 5px;
     padding-bottom: 15px;
   }
 
-  .future-temp{
+  #future-date2{
+    font-size: 11px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  #future-date3{
+    font-size: 11px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  #future-date4{
+    font-size: 11px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  #future-date5{
+    font-size: 11px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  #future-temp1{
     font-size: 11px;
     padding-top: 10px;
     padding-bottom: 7px;
   }
 
-  .future-status{
-      font-size: 11px;
-      padding-bottom: 7px;
+  #future-temp2{
+    font-size: 11px;
+    padding-top: 10px;
+    padding-bottom: 7px;
   }
 
-  .future-humidity{
-      font-size: 11px;
-      padding-bottom: 7px;
+  #future-temp3{
+    font-size: 11px;
+    padding-top: 10px;
+    padding-bottom: 7px;
   }
+
+  #future-temp4{
+    font-size: 11px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+
+  #future-temp5{
+    font-size: 11px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+
+  #future-status1{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-status2{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-status3{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-status4{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-status5{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-humidity1{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-humidity2{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-humidity3{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-humidity4{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
+  #future-humidity5{
+    font-size: 11px;
+    padding-bottom: 7px;
+  }
+
   #city{
     font-size: 30px;
   }
@@ -384,20 +634,87 @@ vertical-align: middle;
     text-align: left;
     padding-left: 10px;
   }
-  .future-date{
+  #future-date1{
     font-size: 10px;
   }
 
-  .future-temp{
+  #future-date2{
     font-size: 10px;
   }
 
-  .future-status{
+  #future-date3{
+    font-size: 10px;
+  }
+
+  #future-date4{
+    font-size: 10px;
+  }
+
+  #future-date5{
+    font-size: 10px;
+  }
+
+  #future-temp1{
+    font-size: 10px;
+  }
+
+  #future-temp2{
+    font-size: 10px;
+  }
+
+  #future-temp3{
+    font-size: 10px;
+  }
+
+  #future-temp4{
+    font-size: 10px;
+  }
+
+  #future-temp5{
+    font-size: 10px;
+}
+
+#future-status1{
       font-size: 10px;
-  }
+}
 
+#future-status2{
+      font-size: 10px;
+}
+
+#future-status3{
+      font-size: 10px;
+}
+
+#future-status4{
+      font-size: 10px;
+}
+
+#future-status5{
+      font-size: 10px;
+}
+
+#future-humidity1{
+      font-size: 10px;
+}
+
+#future-humidity2{
+      font-size: 10px;
+}
+
+#future-humidity3{
+      font-size: 10px;
+}
+
+#future-humidity4{
+      font-size: 10px;
+}
+
+#future-humidity5{
+      font-size: 10px;
+}
   .future-humidity{
-      font-size: 10px;
+
   }
   #city-name{
     width: 60%;
