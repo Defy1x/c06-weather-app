@@ -483,7 +483,7 @@ function displayForecast(forecastData){
 
 // pull in today's date
 function getDate(){
-  var todayDate = moment().format("dddd, MMMM Do YYYY");
+  var todayDate = moment().format("dddd, MMMM Do h:mm a");
   $("#current-date").text(todayDate);
 };
 
