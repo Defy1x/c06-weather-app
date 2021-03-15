@@ -7,8 +7,20 @@ $(document).ready(function() {
   icons.play();
   hideAll();
 
-//get localstorage
-var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
+loadCities();
+//
+function loadCities(){
+  var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
+  for (var i = 0; i < savedCitiesArray.length; i++) {
+    console.log(savedCitiesArray)
+    $('#recent-cities').append("<li><button>"+(savedCitiesArray[i])+"</button></li>");
+    // $('#recent-cities li button').on("click", function(){
+    //   var city = this.textContent;
+    //   console.log(city + " saved CITY CITY that is being hit")
+    //   runSavedCity(city);
+    // }
+  }
+}
 
   $("#clearBtn").on("click", function(){
     console.log("local storage cleared")
@@ -93,37 +105,21 @@ async function search(city) {
     function saveCity(){
       let savedCity = (`${weatherData.name}`);
       console.log (savedCity);
-      $('#recent-cities').prepend("<li><button>"+(savedCity)+"</button></li>");
+      var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
+      savedCitiesArray.push(savedCity);
+      localStorage.setItem("savedCities", JSON.stringify(savedCitiesArray));
+
+//add button for saved city and when click run it
+      $('#recent-cities').append("<li><button>"+(savedCity)+"</button></li>");
       $('#recent-cities li button').on("click", function(){
         var city = this.textContent;
         console.log(city + " that is being hit")
         runSavedCity(city);
-      });
+    });
 }
-  //runs the search on the hit city
-      function runSavedCity(city) {
-          search(city);
-      };
-      //
-      var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
 
-         // function saveCity(savedCity) {
-         //       var cityName = city;
-         //       console.log("this is the new city name " + cityName)
-               // if (!savedCitiesArray.includes(cityName)) {
-               //     savedCitiesArray.push(cityName);
-               //     localStorage.setItem("savedCities", JSON.stringify(savedCitiesArray));
-               //     var savedCityButton = document.createElement('button');
-               //     savedCityButton.innerText = cityName;
-               //     savedCityButton.setAttribute('type', 'button');
-               //     savedCities.appendChild(savedCityButton);
-               //     savedCityButton.addEventListener('click', runSavedCity);
-               // }
-
-        // }
     //show containers
       showItems();
-
     //hide icons if function is run again
       hideIcons();
     //get current date
@@ -135,9 +131,6 @@ async function search(city) {
     //display status
       let status = `${weatherData.weather[0].description}`
       $('#today-status').text(status)
-
-
-
 
       // convert temperature from kelvin to farenheit
       function convertToF(kelvin) {
@@ -498,3 +491,7 @@ function getDate(){
   $("#current-date").text(todayDate);
 };
 //
+//runs the search on the hit city
+function runSavedCity(city) {
+    search(city);
+};
