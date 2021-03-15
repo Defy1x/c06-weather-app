@@ -352,6 +352,9 @@ function displayForecast(forecastData){
 
   //display UV Index
   let uvIndex = (`${forecastData.current.uvi}`);
+  $('#uv-condition').removeClass("favorable");
+  $('#uv-condition').removeClass("moderate");
+  $('#uv-condition').removeClass("severe");
 
   //set UV index statements
   if (uvIndex <= 3 ){
