@@ -425,6 +425,7 @@ vertical-align: middle;
   }
   h1{
     font-size: 26px;
+    padding-bottom: 10px;
   }
   .form-container{
     width: 50%;
