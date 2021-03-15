@@ -8,7 +8,10 @@ $(document).ready(function() {
   hideAll();
   getLocalStorage();
 
-
+  $("#clearBtn").on("click", function(){
+    console.log("local storage cleared")
+    localStorage.clear();
+  });
 
 //hide call icons
 function hideAll(){
@@ -31,10 +34,12 @@ function hideAll(){
       e.preventDefault()
   })
 
+
   // grab value from form
 $('#search-btn').click((event) =>{
   event.preventDefault()
   city = $('#city-name').val().toLowerCase()
+
   console.log(city)
 
 // if no value entered for city, then exit
@@ -355,8 +360,10 @@ function displayForecast(forecastData){
       $(`#future-humidity${i}`).text(futureHumidity);
       console.log(futureHumidity);
 
-    //display future icons using font awesome
+      //empty all the icons on the next call
+      $(`#future-weather-icon${i}`).empty('');
 
+    //display future icons using font awesome
     //DISPLAY SUNNY ICON
       switch (futureStatus) {
       case ('clear sky'):
