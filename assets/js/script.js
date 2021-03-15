@@ -8,7 +8,7 @@ $(document).ready(function() {
   hideAll();
 
 loadCities();
-//
+//loads cities on refresh from local storage
 function loadCities(){
   var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
   for (var i = 0; i < savedCitiesArray.length; i++) {
@@ -19,14 +19,14 @@ function loadCities(){
       var city = this.textContent;
       search(city);
 }
-)}
+)};
 
+//clears the local storage
   $("#clearBtn").on("click", function(){
     console.log("local storage cleared")
     $('#recent-cities').empty('')
     localStorage.clear();
   });
-
 
 
 //hide call icons
@@ -50,7 +50,6 @@ function hideAll(){
       e.preventDefault()
   })
 
-
   // grab value from form
 $('#search-btn').click((event) =>{
   event.preventDefault()
@@ -72,7 +71,7 @@ search(city);
 });
 
 
-// async function begins
+// async function api call for city search
 async function search(city) {
 
   try {
@@ -489,7 +488,7 @@ function getDate(){
   var todayDate = moment().format("dddd, MMMM Do YYYY");
   $("#current-date").text(todayDate);
 };
-//
+
 //runs the search on the hit city
 function runSavedCity(city) {
     search(city);
