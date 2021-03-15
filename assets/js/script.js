@@ -6,16 +6,17 @@ $(document).ready(function() {
   icons.set(list[i], list[i]);
   icons.play();
   hideAll();
-  getLocalStorage();
+
+//get localstorage
+var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
 
   $("#clearBtn").on("click", function(){
     console.log("local storage cleared")
-    $('#city-name').val('')
     $('#recent-cities').empty('')
     localStorage.clear();
   });
 
-  var savedCities = [];
+
 
 //hide call icons
 function hideAll(){
@@ -84,13 +85,42 @@ async function search(city) {
 
 
   function displayResults(weatherData) {
-      saveCity();
 
-      function saveCity(){
-        savedCity = (`${weatherData.name},${weatherData.sys.country}`);
-        console.log(savedCity);
-         $('#recent-cities').prepend("<li>"+(savedCity)+"</li>");
-      }
+    //run saveCity function
+    saveCity();
+
+//makes the city a button and then
+    function saveCity(){
+      let savedCity = (`${weatherData.name}`);
+      console.log (savedCity);
+      $('#recent-cities').prepend("<li><button>"+(savedCity)+"</button></li>");
+      $('#recent-cities li button').on("click", function(){
+        var city = this.textContent;
+        console.log(city + " that is being hit")
+        runSavedCity(city);
+      });
+}
+  //runs the search on the hit city
+      function runSavedCity(city) {
+          search(city);
+      };
+      //
+      var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
+
+         // function saveCity(savedCity) {
+         //       var cityName = city;
+         //       console.log("this is the new city name " + cityName)
+               // if (!savedCitiesArray.includes(cityName)) {
+               //     savedCitiesArray.push(cityName);
+               //     localStorage.setItem("savedCities", JSON.stringify(savedCitiesArray));
+               //     var savedCityButton = document.createElement('button');
+               //     savedCityButton.innerText = cityName;
+               //     savedCityButton.setAttribute('type', 'button');
+               //     savedCities.appendChild(savedCityButton);
+               //     savedCityButton.addEventListener('click', runSavedCity);
+               // }
+
+        // }
     //show containers
       showItems();
 
@@ -99,11 +129,8 @@ async function search(city) {
     //get current date
       getDate();
 
-    //add city to local storage
-      addToLocalStorage();
-
     //display city
-      $('#city').text(`${weatherData.name},${weatherData.sys.country}`)
+      $('#city').text(`${weatherData.name}, ${weatherData.sys.country}`)
 
     //display status
       let status = `${weatherData.weather[0].description}`
@@ -345,7 +372,7 @@ function displayForecast(forecastData){
     $('#uv-condition').text("Moderate").addClass("moderate");
   }
   else if(uvIndex <= 7 || uvIndex > 7 ){
-    $('#uv-condition').text("High").addClass("high");
+    $('#uv-condition').text("Severe").addClass("severe");
   }
 
   //display results in 5 containers
@@ -470,11 +497,4 @@ function getDate(){
   var todayDate = moment().format("dddd, MMMM Do YYYY");
   $("#current-date").text(todayDate);
 };
-
-function getLocalStorage(){
-  console.log("get local storage")
-}
-
-function addToLocalStorage(){
-  console.log("add to local storage")
-}
+//
