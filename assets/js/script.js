@@ -29,7 +29,7 @@ function loadCities(){
   });
 
 
-//hide call icons
+//hide all items and icons
 function hideAll(){
   $('.location').hide();
   $('.today-container').hide();
