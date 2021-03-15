@@ -14,13 +14,12 @@ function loadCities(){
   for (var i = 0; i < savedCitiesArray.length; i++) {
     console.log(savedCitiesArray)
     $('#recent-cities').append("<li><button>"+(savedCitiesArray[i])+"</button></li>");
-    // $('#recent-cities li button').on("click", function(){
-    //   var city = this.textContent;
-    //   console.log(city + " saved CITY CITY that is being hit")
-    //   runSavedCity(city);
-    // }
   }
+    $('#recent-cities li button').on("click", function(){
+      var city = this.textContent;
+      search(city);
 }
+)}
 
   $("#clearBtn").on("click", function(){
     console.log("local storage cleared")
