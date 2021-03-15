@@ -10,6 +10,7 @@ $(document).ready(function() {
 
   $("#clearBtn").on("click", function(){
     console.log("local storage cleared")
+    $('#city-name').val('')
     localStorage.clear();
   });
 

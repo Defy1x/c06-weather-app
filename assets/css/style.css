@@ -25,9 +25,10 @@ h2{
   margin-left: 20px;
 }
 ul{
-  padding-top: 5px;
+  padding-top: 1px;
   margin-top:2px;
-  width: 75%;
+  margin-bottom: 5px;
+  width: 55%;
   padding-inline-start: 0px;
 }
 li{
