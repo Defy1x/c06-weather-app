@@ -11,8 +11,11 @@ $(document).ready(function() {
   $("#clearBtn").on("click", function(){
     console.log("local storage cleared")
     $('#city-name').val('')
+    $('#recent-cities').empty('')
     localStorage.clear();
   });
+
+  var savedCities = [];
 
 //hide call icons
 function hideAll(){
@@ -81,6 +84,13 @@ async function search(city) {
 
 
   function displayResults(weatherData) {
+      saveCity();
+
+      function saveCity(){
+        savedCity = (`${weatherData.name},${weatherData.sys.country}`);
+        console.log(savedCity);
+         $('#recent-cities').prepend("<li>"+(savedCity)+"</li>");
+      }
     //show containers
       showItems();
 
@@ -343,23 +353,19 @@ function displayForecast(forecastData){
       // display future date
       var futureDate = moment.unix(`${forecastData.daily[i].dt}`).format("dddd");
       $(`#future-date${i}`).text(futureDate);
-      console.log(futureDate)
 
       //display future temp and round degrees down
       var futureTemp = (`${forecastData.daily[i].temp.day}`)
       var futureTempRound = Math.floor(futureTemp)+"°F";
       $(`#future-temp${i}`).text(futureTempRound);
-      console.log(futureTempRound)
 
        //display future status
       var futureStatus = (`${forecastData.daily[i].weather[0].description}`)
       $(`#future-status${i}`).text(futureStatus);
-      console.log(futureStatus);
 
       //display future Humidity
       var futureHumidity = (`Humidity: ${forecastData.daily[i].humidity}%`)
       $(`#future-humidity${i}`).text(futureHumidity);
-      console.log(futureHumidity);
 
       //empty all the icons on the next call
       $(`#future-weather-icon${i}`).empty('');
