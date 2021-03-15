@@ -102,7 +102,6 @@ async function search(city) {
 //makes the city a button and then
     function saveCity(){
       let savedCity = (`${weatherData.name}`);
-      console.log (savedCity);
       var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
       savedCitiesArray.push(savedCity);
       localStorage.setItem("savedCities", JSON.stringify(savedCitiesArray));
@@ -111,7 +110,6 @@ async function search(city) {
       $('#recent-cities').append("<li><button>"+(savedCity)+"</button></li>");
       $('#recent-cities li button').on("click", function(){
         var city = this.textContent;
-        console.log(city + " that is being hit")
         runSavedCity(city);
     });
 }
@@ -369,7 +367,7 @@ function displayForecast(forecastData){
   //display results in 5 containers
   for (var i = 1; i < 6; i++) {
       // display future date
-      var futureDate = moment.unix(`${forecastData.daily[i].dt}`).format("dddd");
+      var futureDate = moment.unix(`${forecastData.daily[i].dt}`).format("ddd");
       $(`#future-date${i}`).text(futureDate);
 
       //display future temp and round degrees down
