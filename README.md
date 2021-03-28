@@ -36,7 +36,7 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 
-This homework was very difficult and used all of the previous homework assignments code including working with APIs. I am super happy to have finished this.
+This homework was very difficult and used all of the previous homework assignments code including working with APIs. The technologies used in this app were HTML, CSS, and JS. I am super happy to have finished this.
 
 #Links
 ## Deployed Link:
@@ -45,6 +45,8 @@ https://defy1x.github.io/c06-weather-app/
 #Usage
 ## Final screenshot
 ![This is the final deployed screenshot of the day planner](requirements/screenshot.png)
+![This is the final deployed screenshot of the day planner](requirements/screenshot-1.png)
+![This is the final deployed screenshot of the day planner](requirements/screenshot-2.png)
 
 This is my weather app. I am very proud of this.
 
