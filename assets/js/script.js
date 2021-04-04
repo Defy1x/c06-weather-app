@@ -7,6 +7,7 @@ $(document).ready(function() {
   icons.play();
   hideAll();
 
+
 loadCities();
 //loads cities on refresh from local storage
 function loadCities(){
@@ -77,7 +78,7 @@ async function search(city) {
   try {
 
     const url = 'https://api.openweathermap.org/data/2.5/weather'
-    const apiKey = '4159a716c99e2d3e9c669ff6a22c35db'
+    const apiKey = config.OPEN_WEATHER_API_KEY
 
     let response = await axios.get(url, {
         params: {
@@ -334,7 +335,7 @@ async function getForecast(lat, lon) {
   try {
 
     const url = 'https://api.openweathermap.org/data/2.5/onecall?&exclude=hourly,minutely&units=imperial'
-    const apiKey = '4159a716c99e2d3e9c669ff6a22c35db'
+    const apiKey = config.OPEN_WEATHER_API_KEY
 
     let forecast = await axios.get(url, {
         params: {
