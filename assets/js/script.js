@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   // icons array
   let icons = new Skycons({"color": "#FFF"}),
   list  = [ "clear-night","clear-day", "partly-cloudy-day","partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind", "fog"], i;
