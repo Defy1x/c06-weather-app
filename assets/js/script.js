@@ -159,9 +159,9 @@ async function search(city) {
       //CLEAR SKIES BEGINS
       switch (status) {
       case ('clear sky'):
-        $("body").css('background-image','url("./assets/img/sunny.jpg")');
+        // $("body").css('background-image','url("./assets/img/sunny.jpg")');
         $('#clear-day').show()
-        $("h1").css('color','black');
+        // $("h1").css('color','black');
         break;
     // Clear skies ends fuck noooooo :(
 
@@ -169,8 +169,8 @@ async function search(city) {
       case ('scattered clouds'):
       case ('broken clouds'):
       case ('few clouds'):
-        $("body").css('background-image','url("./assets/img/partly-cloudy.jpg")');
-        $("h1").css('color','black');
+        // $("body").css('background-image','url("./assets/img/partly-cloudy.jpg")');
+        // $("h1").css('color','black');
         $('#partly-cloudy-day').show()
         break;
     // PARTLY CLOUDY ENDS
@@ -178,8 +178,8 @@ async function search(city) {
     // CLOUDY BEGINS
       case ('cloudy'):
       case ('overcast clouds'):
-        $("body").css('background-image','url("./assets/img/cloudy.jpg")');
-        $("h1").css('color','white');
+        // $("body").css('background-image','url("./assets/img/cloudy.jpg")');
+        // $("h1").css('color','white');
         $('#cloudy').show()
         break;
     // CLOUDY ENDS
@@ -195,8 +195,8 @@ async function search(city) {
       case ('light intensity shower rain'):
       case ('heavy shower rain and drizzle'):
       case ('shower drizzle'):
-      $("body").css('background-image','url("./assets/img/drizzle.jpg")');
-      $("h1").css('color','white');
+      // $("body").css('background-image','url("./assets/img/drizzle.jpg")');
+      // $("h1").css('color','white');
         $('#rain').show()
         break;
     // RAIN ENDS
@@ -205,8 +205,8 @@ async function search(city) {
       case ('light rain'):
       case ('light intensity rain'):
       case ('ragged shower rain'):
-      $("h1").css('color','white');
-        $("body").css('background-image','url("./assets/img/rainy.jpg")');
+      // $("h1").css('color','white');
+      //   $("body").css('background-image','url("./assets/img/rainy.jpg")');
         $('#rain').show()
         break;
     // RAIN ENDS
@@ -217,24 +217,24 @@ async function search(city) {
       case ('moderate rain'):
       case ('very heavy rain'):
       case ('extreme rain'):
-      $("body").css('background-image','url("./assets/img/heavy-rain.jpg")');
-      $("h1").css('color','white');
+      // $("body").css('background-image','url("./assets/img/heavy-rain.jpg")');
+      // $("h1").css('color','white');
         $('#rain').show()
         break;
     // HEAVY RAIN ENDS
 
     //FOG BEGINS
       case ('fog'):
-        $("body").css('background-image','url("./assets/img/fog.jpg")');
-        $("h1").css('color','black');
+        // $("body").css('background-image','url("./assets/img/fog.jpg")');
+        // $("h1").css('color','black');
         $('#fog').show()
         break;
     // FOG ENDS
 
     //MIST BEGINS
       case ('mist'):
-        $("body").css('background-image','url("./assets/img/mist.jpg")');
-        $("h1").css('color','black');
+        // $("body").css('background-image','url("./assets/img/mist.jpg")');
+        // $("h1").css('color','black');
         $('#fog').show()
         break;
     // MIST ENDS
@@ -242,55 +242,55 @@ async function search(city) {
     //SAND BEGINS
       case ('sand'):
       case ('sand/ dust whirls'):
-        $("body").css('background-image','url("./assets/img/sand.jpg")');
-        $("h1").css('color','black');
+        // $("body").css('background-image','url("./assets/img/sand.jpg")');
+        // $("h1").css('color','black');
         $('#fog').show()
         break;
     // SAND ENDS
 
     // TORNADO BEGINS
       case ('tornado'):
-        $("body").css('background-image','url("./assets/img/tornado.jpg")');
-        $("h1").css('color','white');
+        // $("body").css('background-image','url("./assets/img/tornado.jpg")');
+        // $("h1").css('color','white');
         $('#wind').show()
         break;
     // TORNADO ENDS
 
     // SQUALLS BEGINS
       case ('squalls'):
-        $("body").css('background-image','url("./assets/img/windy.jpg")');
-        $("h1").css('color','black');
+        // $("body").css('background-image','url("./assets/img/windy.jpg")');
+        // $("h1").css('color','black');
         $('#wind').show()
         break;
     // SQUALLS ENDS
 
     // DUST BEGINS
       case ('dust'):
-        $("body").css('background-image','url("./assets/img/dust.jpg")');
-        $("h1").css('color','black');
+        // $("body").css('background-image','url("./assets/img/dust.jpg")');
+        // $("h1").css('color','black');
         $('#fog').show()
         break;
     // DUST ENDS
 
     // ASH BEGINS
       case ('volcanic ash'):
-        $("body").css('background-image','url("./assets/img/ash.jpg")');
-        $("h1").css('color','white');
+        // $("body").css('background-image','url("./assets/img/ash.jpg")');
+        // $("h1").css('color','white');
         $('#fog').show()
         break;
     // ASH ENDS
 
     // HAZE BEGINS
       case ('haze'):
-      $("body").css('background-image','url("./assets/img/haze.jpg")');
+      // $("body").css('background-image','url("./assets/img/haze.jpg")');
         $('#fog').show()
         break;
     // HAZE ENDS
 
     // SMOKE BEGINS
       case ('smoke'):
-      $("body").css('background-image','url("./assets/img/smoke.jpg")');
-      $("h1").css('color','black');
+      // $("body").css('background-image','url("./assets/img/smoke.jpg")');
+      // $("h1").css('color','black');
         $('#fog').show()
         break;
     // SMOKE ENDS
@@ -307,8 +307,8 @@ async function search(city) {
       case ('thunderstorm with drizzle'):
       case ('thunderstorm with heavy drizzle'):
         $('#rain').show()
-        $("body").css('background-image','url("./assets/img/lightning.jpg")');
-        $("h1").css('color','white');
+        // $("body").css('background-image','url("./assets/img/lightning.jpg")');
+        // $("h1").css('color','white');
         break;
     // THUNDERSTORM ENDS
 
@@ -318,8 +318,8 @@ async function search(city) {
       case ('shower sleet'):
       case ('freezing rain'):
       case ('rain and snow'):
-        $("body").css('background-image','url("./assets/img/sleet.jpg")');
-        $("h1").css('color','white');
+        // $("body").css('background-image','url("./assets/img/sleet.jpg")');
+        // $("h1").css('color','white');
         $('#sleet').show()
         break;
     // SNOW ENDS
@@ -333,16 +333,16 @@ async function search(city) {
       case ('light shower snow'):
       case ('shower snow'):
       case ('heavy shower snow'):
-        $("body").css('background-image','url("./assets/snow.jpg")');
-        $("h1").css('color','white');
+        // $("body").css('background-image','url("./assets/snow.jpg")');
+        // $("h1").css('color','white');
         $('#snow').show()
         break;
     // SNOW ENDS
 
     //DEFAULT JUST IN CASE IF I MISSED A VALUE
       default:
-      $("body").css('background-image','url("./assets/img/default.jpg")');
-      $("h1").css('color','white');
+      // $("body").css('background-image','url("./assets/img/default.jpg")');
+      // $("h1").css('color','white');
         // end switch statement
         }
   }

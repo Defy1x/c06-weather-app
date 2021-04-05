@@ -36,7 +36,7 @@ li{
   border-radius: 20px;
   padding: 10px;
   padding-left: 30px;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .5);
   margin-bottom: 3px;
 }
 
@@ -47,7 +47,7 @@ li{
 section{
   margin-bottom: 20px;
   margin-left: 20px;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .5);
   border-radius: 15px;
   padding: 20px;
   width: 25%;
@@ -94,7 +94,7 @@ section{
 .today-container{
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .5);
   border-radius: 15px;
   padding: 30px;
   margin-left: 20px;
@@ -171,7 +171,7 @@ section{
 #city-name {
 color: #fff;
 font-size: 16px;
-background:rgba(0, 0, 0, .6);
+background:rgba(0, 0, 0, .5);
 border: 1px rgba(0, 0, 0, 0.34);
 border-radius: 25px;
 padding: 0px 2em;
