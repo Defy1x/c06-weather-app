@@ -20,6 +20,7 @@ function loadCities(){
     $('#recent-cities li button').on("click", function(){
       var city = this.textContent;
       search(city);
+      console.log("city is getting clicked! what is happening?")
 }
 )};
 
@@ -99,25 +100,7 @@ async function search(city) {
   function displayResults(weatherData) {
 
     //run saveCity function
-    saveCity();
-
-//makes the city a button and then
-    function saveCity(){
-      let savedCity = (`${weatherData.name}`);
-      var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
-
-      if (!savedCitiesArray.includes(savedCity)){
-      savedCitiesArray.push(savedCity);
-      localStorage.setItem("savedCities", JSON.stringify(savedCitiesArray));
-    }
-//add button for saved city and when click run it
-      $('#recent-cities').append("<li><button>"+(savedCity)+"</button></li>");
-      $('#recent-cities li button').on("click", function(){
-        var city = this.textContent;
-        runSavedCity(city);
-
-    });
-}
+    saveCity(city);
 
     //show containers
       showItems();
@@ -524,6 +507,22 @@ function displayForecast(forecastData){
         // end switch statement
     }
   }
+}
+
+function saveCity(city){
+  let savedCity = city;
+  var savedCitiesArray = JSON.parse(localStorage.getItem("savedCities")) || [];
+
+  if (!savedCitiesArray.includes(savedCity)){
+  savedCitiesArray.push(savedCity);
+  localStorage.setItem("savedCities", JSON.stringify(savedCitiesArray));
+}
+//add button for saved city and when click run it
+  $('#recent-cities').append("<li><button>"+(savedCity)+"</button></li>");
+//   $('#recent-cities li button').on("click", function(){
+//     var city = this.textContent;
+//     runSavedCity(city);
+// });
 }
 
 // pull in today's date
